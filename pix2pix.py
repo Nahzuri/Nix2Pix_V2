@@ -238,7 +238,7 @@ def load_examples():
     decode = tf.image.decode_jpeg
     if len(input_paths) == 0:
         input_paths = glob.glob(os.path.join(a.input_dir, "*.png"))
-        decode = tf.image.decode_png
+        decode = tf.image.decode_png(file_contents, channels=3) 
 
     if len(input_paths) == 0:
         raise Exception("input_dir contains no image files")
